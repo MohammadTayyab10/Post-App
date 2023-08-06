@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        .container {
+            width: 360px;
+            /* height: 320px; */
+            background-color: bl;
+            text-align: center;
+            border-radius: 30px;
+            border-color: black;
+            border-width: 2px;
+            font-family: cursive;
+            font-size: 25px;
+
+        }
+
+        h1 {
+            position: obsolute;
+            top: 2vh;
+        }
+
+        .container #email {
+
+            border-color: grey;
+            border-width: 1px;
+            outline: none;
+            width: 260px;
+            height: 30px;
+            border-radius: 4px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .container #user:hover {
+            box-shadow: 8px 8px 18px -4px #d1d9eb, -8px -8px 18px -4px #ffffff;
+
+
+
+
+        }
+
+
+
+
+
+
+        .container #password {
+
+            border-color: grey;
+            border-width: 1px;
+            outline: none;
+            width: 260px;
+            height: 30px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .container #password:hover {
+            box-shadow: 8px 8px 18px -4px #d1d9eb, -8px -8px 18px -4px #ffffff;
+
+
+
+        }
+
+
+        .container #btn {
+            box-shadow: 8px 8px 18px -4px #d1d9eb, -8px -8px 18px -4px #ffffff;
+            border: none;
+            outline: none;
+            background-color: skyblue;
+            color: white;
+            font-weight: bold;
+            width: 260px;
+            height: 30px;
+            border-radius: 10px;
+
+
+        }
+
+        .container #btn:hover {
+            box-shadow: 8px 8px 18px -4px #d1d9eb, -8px -8px 18px -4px #ffffff;
+            background-color: grey;
+
+        }
+
+        ;
+
+        .fb #img {
+            background-color: pink;
+
+        }
+
+
+
+        .fb #fb1 {
+            font-size: 20px;
+            color: grey;
+            text-align: center;
+            font-family: aerial;
+            font-weight: bold;
+        }
+
+        .fb {
+            display: block;
+            text-align: center;
+        }
+
+        .container #p {
+            font-family: ahorani;
+            font-weight: bold;
+            color: grey;
+            font-size: 25px;
+        }
+
+        .ttl {
+            border-color: grey;
+            outline: none;
+            /* background-color:pi */
+            border-width: 8px;
+            width: 560px;
+            box-shadow: 7px 7px 17px -2px #d1d9eb, -7px -7px 17px -2px #ffffff;
+        }
+
+
+        p3 {
+            display: flex;
+            word-spacing: 10px;
+            text-align: center;
+            position: relative;
+            left: 32%;
+            color: grey;
+        }
+
+        input::placeholder {
+            color: #959191;
+            font-style: italic;
+        }
+
+        #file {
+            border: none;
+        }
+
+        input {
+            width: 80%;
+            height: 30px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 4px solid rgb(0, 0, 0);
+        }
+
+        textarea {
+            margin-top: 20px;
+        }
+
+        input::placeholder {
+            font-style: italic;
+            color: gray;
+        }
+
+        textarea::placeholder {
+            font-style: italic;
+            color: gray;
+        }
+
+        ::-webkit-file-upload-button {
+            color: #ffffff;
+            background-color: rgb(0, 0, 0);
+            padding: 10px;
+            border: none;
+            border-radius: 50px;
+        }
+
+        ::-webkit-file-upload-button:hover {
+            color: white;
+            background-color: rgb(74, 74, 74);
+        }
+
+        #btn {
+            width: 38%;
+            height: 30px;
+            background-color: chartreuse;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+        .upd {
+            font-size: large;
+            background-color: rgb(255, 255, 255);
+            border: none;
+            margin-bottom: 10px;
+        }
+
+        .del {
+            font-size: large;
+            background-color: rgb(255, 255, 255);
+            border: none;
+            margin-bottom: 10px;
+        }
+
+        img {
+            max-width: 400px;
+            height: 200px;
+        }
+
+        h2 {
+            color: #000000;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        h4 {
+            color: #000000;
+            font-weight: bold;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="ttl">
+            <center>
+                <img src="https://static.vecteezy.com/system/resources/previews/006/998/434/non_2x/photo-camera-icons-photo-camera-icon-design-illustration-photo-camera-simple-sign-photo-camera-logo-vector.jpg "
+                width="35%">
+                <div class="container">
+                    <h1>Post App</h1>
+                    <input type="file" id="file"><br>
+                    <div><input type="text" id="title" placeholder="Enter Title..."><br />
+                        <textarea id="des" cols="37" rows="10" placeholder="Enter Description..."></textarea><br />
+                    </div>
+                    <br>
+                    <div><button id="btn">Post</button></div>
+                    <div id="show"></div>
+                </div>
+            </center>
+        </div>
+    </center>
+    <script type="module" src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

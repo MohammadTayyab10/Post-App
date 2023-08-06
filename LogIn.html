@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> -->
+    <style>
+        .container {
+            width: 360px;
+            height: 320px;
+            background-color: bl;
+            text-align: center;
+            border-radius: 30px;
+            border-color: black;
+            border-width: 2px;
+            font-family: cursive;
+            font-size: 25px;
+
+        }
+
+        h1 {
+            position: obsolute;
+            top: 2vh;
+        }
+
+        .container #email {
+
+            border-color: grey;
+            border-width: 1px;
+            outline: none;
+            width: 260px;
+            height: 30px;
+            border-radius: 4px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .container #user:hover {
+            box-shadow: 8px 8px 18px -4px #d1d9eb, -8px -8px 18px -4px #ffffff;
+
+
+
+
+        }
+
+
+
+
+
+
+        .container #password {
+
+            border-color: grey;
+            border-width: 1px;
+            outline: none;
+            width: 260px;
+            height: 30px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .container #password:hover {
+            box-shadow: 8px 8px 18px -4px #d1d9eb, -8px -8px 18px -4px #ffffff;
+
+
+
+        }
+
+
+        .container #btn {
+            box-shadow: 8px 8px 18px -4px #d1d9eb, -8px -8px 18px -4px #ffffff;
+            border: none;
+            outline: none;
+            background-color: skyblue;
+            color: white;
+            font-weight: bold;
+            width: 260px;
+            height: 30px;
+            border-radius: 10px;
+
+
+        }
+
+        .container #btn:hover {
+            box-shadow: 8px 8px 18px -4px #d1d9eb, -8px -8px 18px -4px #ffffff;
+            background-color: grey;
+
+        }
+
+        ;
+
+        .fb #img {
+            background-color: pink;
+
+        }
+
+
+
+        .fb #fb1 {
+            font-size: 20px;
+            color: grey;
+            text-align: center;
+            font-family: aerial;
+            font-weight: bold;
+        }
+
+        .fb {
+            display: block;
+            text-align: center;
+        }
+
+        .container #p {
+            font-family: ahorani;
+            font-weight: bold;
+            color: grey;
+            font-size: 25px;
+        }
+
+        .ttl {
+            border-color: grey;
+            outline: none;
+            /* background-color:pi */
+            border-width: 8px;
+            width: 360px;
+            height: 600px;
+            box-shadow: 7px 7px 17px -2px #d1d9eb, -7px -7px 17px -2px #ffffff;
+        }
+
+
+        p3 {
+            display: flex;
+            word-spacing: 10px;
+            text-align: center;
+            position: relative;
+            left: 32%;
+            color: grey;
+        }
+
+        input::placeholder {
+            color: #959191;
+            font-style: italic;
+        }
+        #a{
+            font-size: medium;
+        }
+        a{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <br><br>
+
+
+
+
+
+
+    <center>
+
+        <div class="ttl">
+            <div>
+                <center><img
+                        src="https://static.vecteezy.com/system/resources/previews/006/998/434/non_2x/photo-camera-icons-photo-camera-icon-design-illustration-photo-camera-simple-sign-photo-camera-logo-vector.jpg "
+                        width="35%"></center>
+            </div>
+            <center>
+
+                <div class="container">
+                    <h1>Post App</h1>
+                    <div><input type="text" id="email" placeholder="Email..."></div><br>
+                    <div><input type="password" id="password" placeholder="Password..."></div>
+                    <br>
+                    <div><button id="btn">Log In</button></div>
+                    <p id="p">----------OR----------</p>
+                    <p id="a">You Don't Have An Accont Click The Link <a href="./index.html">Sign In</a></p>
+                </div>
+            </center>
+
+
+
+
+
+
+
+            
+
+
+        </div>
+    </center>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, sendEmailVerification, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyBYt862dHkRPuQAR9Tqud2jTqgo2IBC5s4",
+    authDomain: "mt10-4f232.firebaseapp.com",
+    databaseURL: "https://mt10-4f232-default-rtdb.firebaseio.com",
+    projectId: "mt10-4f232",
+    storageBucket: "mt10-4f232.appspot.com",
+    messagingSenderId: "356048395157",
+    appId: "1:356048395157:web:e8e29279ba1db42da8349c",
+    measurementId: "G-7JQ5WXWF1G"
+  };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+const btn = document.getElementById("btn")
+
+btn.addEventListener('click', () => {
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    // Sign In Existing User
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            console.log("User Log In:", user);
+            sendEmailVerification(auth.currentUser)
+                .then(() => {
+                    onAuthStateChanged(auth, (user) => {
+                        if (user.emailVerified === true) {
+                            const uid = user.uid;
+                            console.log(uid)
+                            window.location.href = "Post.html"
+                        } else {
+                            Swal.fire({
+                                title: `Verify Account!`,
+                                text: `Please See Gmail `,
+                                icon: 'error',
+                                confirmButtonText: 'OK'
+                            });
+                        }
+                    }
+                    );
+                });
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            if (errorCode == "auth/invalid-email" && errorMessage == "Firebase: Error (auth/invalid-email).") {
+                Swal.fire({
+                    title: `Email`,
+                    text: `Please Enter Email `,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+            else if (errorCode == "auth/user-not-found" && errorMessage == "Firebase: Error (auth/user-not-found).") {
+                Swal.fire({
+                    title: `User`,
+                    text: `User Not Found `,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+            else if (errorCode == "auth/missing-password" && errorMessage == "Firebase: Error (auth/missing-password).") {
+                Swal.fire({
+                    title: `Password`,
+                    text: `Please Enter Password`,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+            else if (errorCode == "auth/wrong-password" && errorMessage == "Firebase: Error (auth/wrong-password).") {
+                Swal.fire({
+                    title: `Password`,
+                    text: `Please Enter Right Password`,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+            else if (errorCode == "auth/network-request-failed" && errorMessage == "Firebase: Error (auth/network-request-failed).") {
+                Swal.fire({
+                    title: `Network Error`,
+                    text: `Please Connect Network!`,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+            else {
+                console.log("ErrorCode LogIn:", errorCode);
+                console.log("ErrorMessage LogIn:", errorMessage);
+            }
+        });
+
+})
+    </script>
+
+</body>
+
+</html>
